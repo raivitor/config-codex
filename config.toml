@@ -4,9 +4,7 @@ model_reasoning_effort = "high"
 # Segurança / padrão
 approval_policy = "on-request"
 sandbox_mode = "read-only"
-
-[features]
-web_search_request = true
+web_search = "disabled"
 
 [profiles.pm]
 model = "gpt-5.2"

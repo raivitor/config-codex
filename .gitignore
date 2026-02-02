@@ -1,4 +1,8 @@
+shell_snapshots/
+shell_snapshots
+/shell_snapshots
+shell_snapshots/*
+/shell_snapshots/
 log/
 sessions/
 tmp/
-shell_snapshots/
