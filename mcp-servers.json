@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "postgres": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-postgres",
+                "postgresql://admin:adminadmin@localhost:5432/shiva5"
+            ]
+        }
+    }
+}

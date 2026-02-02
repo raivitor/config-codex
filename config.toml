@@ -1,0 +1,57 @@
+model = "gpt-5.2-codex"
+model_reasoning_effort = "high"
+
+# Segurança / padrão
+approval_policy = "on-request"
+sandbox_mode = "read-only"
+
+[features]
+web_search_request = true
+
+[profiles.pm]
+model = "gpt-5.2"
+sandbox_mode = "workspace-write"
+model_reasoning_effort = "high"
+model_reasoning_summary = "concise"
+model_instructions_file = "~/.codex/prompts/pm.md"
+
+[profiles.arq]
+model = "gpt-5.2-codex"
+sandbox_mode = "workspace-write"
+model_reasoning_effort = "xhigh"
+model_instructions_file = "~/.codex/prompts/architect.md"
+
+[profiles.dev]
+model = "gpt-5.2-codex"
+sandbox_mode = "workspace-write"
+model_reasoning_effort = "high"
+model_instructions_file = "~/.codex/prompts/dev.md"
+
+[profiles.qa]
+model = "gpt-5.2"
+sandbox_mode = "read-only"
+model_reasoning_effort = "high"
+model_reasoning_summary = "concise"
+model_verbosity = "low"
+model_instructions_file = "~/.codex/prompts/reviewer.md"
+
+[projects."/home/raivitor/gitlab/shiva-remessas"]
+trust_level = "trusted"
+
+[sandbox_workspace_write]
+network_access = false
+writable_roots = ["."]
+exclude_slash_tmp = true
+exclude_tmpdir_env_var = true
+
+[otel]
+exporter = "none"
+trace_exporter = "none"
+
+[notice.model_migrations]
+"gpt-5.2" = "gpt-5.2-codex"
+
+[mcp_servers.pg]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-postgres", "postgresql://admin:adminadmin@localhost:5432/shiva5"]
+
