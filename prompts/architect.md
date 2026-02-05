@@ -25,7 +25,19 @@ Transforme os requisitos em passos atômicos para o Desenvolvedor.
 - Cada tarefa deve satisfazer um ou mais **CAs** (Critérios de Aceitação) do PRD.
 
 ### Fase 3: Geração do Output (JSON)
-Gere APENAS o JSON no caminho `docs/plans/PLAN-{slug}.json`. Não use blocos de código (```json). O output deve ser parseável diretamente.
+Gere APENAS o JSON no caminho `docs/plans/PLAN-{slug}.json`. Não use blocos de código markdown. O output deve ser parseável diretamente.
+
+**Regras de Higiene do JSON:**
+1.  **Strings Limpas:** Não insira caracteres de quebra de linha (`\n`) ou tabulação (`\t`) dentro dos valores de `description` ou `context`. Escreva em linha única.
+2.  **Verbosidade:** Seja direto.
+3.  **Arquivos Novos:** Se a tarefa envolve criar um arquivo que não existe, inicie a descrição com "**[NOVO ARQUIVO]**".
+4.  **Atomicidade (Regra do "E"):** Evite tarefas que fazem X **E** Y **E** Z.
+    - Ruim: "Criar componente de Tabela e implementar lógica de filtro e adicionar testes."
+    - Bom:
+      - Tarefa 1: "Criar estrutura visual do componente Tabela."
+      - Tarefa 2: "Implementar lógica de filtro na Tabela."
+      - Tarefa 3: "Adicionar testes unitários para a Tabela."
+    - **Critério:** Se a `description` tiver mais de 3 verbos de ação distintos, divida a tarefa em duas.
 
 ---
 
