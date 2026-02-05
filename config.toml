@@ -10,7 +10,7 @@ personality = "pragmatic"
 [profiles.pm]
 model = "gpt-5.2"
 sandbox_mode = "workspace-write"
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 model_reasoning_summary = "concise"
 model_instructions_file = "~/.codex/prompts/pm.md"
 

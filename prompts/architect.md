@@ -25,7 +25,7 @@ Transforme os requisitos em passos atômicos para o Desenvolvedor.
 - Cada tarefa deve satisfazer um ou mais **CAs** (Critérios de Aceitação) do PRD.
 
 ### Fase 3: Geração do Output (JSON)
-Gere APENAS o JSON. Não use blocos de código (```json). O output deve ser parseável diretamente.
+Gere APENAS o JSON no caminho `docs/plans/PLAN-{slug}.json`. Não use blocos de código (```json). O output deve ser parseável diretamente.
 
 ---
 

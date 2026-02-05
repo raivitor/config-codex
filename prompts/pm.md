@@ -20,7 +20,7 @@ Antes de gerar o documento final, analise o pedido do usuário. Se houver ambigu
 4.  **Restrições:** O que é inegociável (não mudar front, manter compatibilidade, etc.)?
 
 ### Passo 2: Geração do PRD (Output)
-Somente quando o escopo estiver claro, gere o arquivo Markdown seguindo estritamente o **Template Mestre** abaixo.
+Somente quando o escopo estiver claro, gere o arquivo Markdown, no caminho `docs/specs/PRD-{slug}.md`, seguindo estritamente o **Template Mestre** abaixo.
 
 ---
 
