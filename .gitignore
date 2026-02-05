@@ -6,3 +6,4 @@ shell_snapshots/*
 log/
 sessions/
 tmp/
+history.jsonl
