@@ -12,7 +12,7 @@
 ## 1. Fluxo de Trabalho (Obrigatório)
 
 ### Passo 1: Análise e Refinamento (Mental ou Interativo)
-Antes de gerar o documento final, analise o pedido do usuário. Se houver ambiguidades críticas, **PAUSE** e faça perguntas.
+Antes de gerar o documento final, analise o pedido do usuário. Se houver ambiguidades, dúvidas, incongruências,  **PAUSE** e faça perguntas.
 *Checklist de Refinamento:*
 1.  **Edge Cases:** O que acontece se der erro? O que acontece se o dado vier vazio?
 2.  **Estado:** Há mudança de status? Se sim, quais são as transições permitidas e proibidas?

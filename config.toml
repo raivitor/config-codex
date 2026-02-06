@@ -1,4 +1,4 @@
-model = "gpt-5.2-codex"
+model = "gpt-5.3-codex"
 model_reasoning_effort = "high"
 
 # Segurança / padrão
@@ -15,13 +15,13 @@ model_reasoning_summary = "concise"
 model_instructions_file = "~/.codex/prompts/pm.md"
 
 [profiles.arq]
-model = "gpt-5.2-codex"
+model = "gpt-5.3-codex"
 sandbox_mode = "workspace-write"
 model_reasoning_effort = "xhigh"
 model_instructions_file = "~/.codex/prompts/architect.md"
 
 [profiles.dev]
-model = "gpt-5.2-codex"
+model = "gpt-5.3-codex"
 sandbox_mode = "workspace-write"
 model_reasoning_effort = "high"
 model_instructions_file = "~/.codex/prompts/dev.md"
