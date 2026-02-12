@@ -7,3 +7,4 @@ log/
 sessions/
 tmp/
 history.jsonl
+auth.json
