@@ -1,11 +1,12 @@
 model = "gpt-5.3-codex"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
 
 # Segurança / padrão
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 personality = "pragmatic"
+temperature = 0.0
 
 [profiles.pm]
 model = "gpt-5.3-codex"
@@ -53,6 +54,9 @@ trace_exporter = "none"
 [mcp_servers.pg]
 command = "npx"
 args = ["-y", "@modelcontextprotocol/server-postgres", "postgresql://admin:adminadmin@localhost:5432/shiva5"]
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
 
 [features]
 shell_snapshot = true
