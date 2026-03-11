@@ -1,0 +1,4 @@
+interface:
+  display_name: "Refinar Prompt Codex"
+  short_description: "Entrevista voce e transforma ideias em prompts para Codex CLI."
+  default_prompt: "Use $refinar-prompt-codex para me entrevistar se faltar contexto e depois entregar um prompt pronto para colar no Codex CLI."
