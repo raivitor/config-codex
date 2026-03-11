@@ -6,30 +6,29 @@ approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 personality = "pragmatic"
-temperature = 0.0
 plan_mode_reasoning_effort = "xhigh"
 
 [profiles.pm]
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 sandbox_mode = "workspace-write"
 model_reasoning_effort = "xhigh"
 model_reasoning_summary = "concise"
 model_instructions_file = "~/.codex/prompts/pm.md"
 
 [profiles.arq]
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 sandbox_mode = "workspace-write"
 model_reasoning_effort = "xhigh"
 model_instructions_file = "~/.codex/prompts/architect.md"
 
 [profiles.dev]
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 sandbox_mode = "workspace-write"
 model_reasoning_effort = "medium"
 model_instructions_file = "~/.codex/prompts/dev.md"
 
 [profiles.qa]
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 sandbox_mode = "read-only"
 model_reasoning_effort = "high"
 model_reasoning_summary = "concise"
@@ -52,10 +51,6 @@ exclude_tmpdir_env_var = true
 exporter = "none"
 trace_exporter = "none"
 
-[notice.model_migrations]
-"gpt-5.2" = "gpt-5.3-codex"
-"gpt-5.3-codex" = "gpt-5.4"
-
 [mcp_servers.pg]
 command = "npx"
 args = ["-y", "@modelcontextprotocol/server-postgres", "postgresql://admin:adminadmin@localhost:5432/shiva5"]
@@ -64,6 +59,4 @@ args = ["-y", "@modelcontextprotocol/server-postgres", "postgresql://admin:admin
 url = "https://developers.openai.com/mcp"
 
 [features]
-shell_snapshot = true
 apps = true
-

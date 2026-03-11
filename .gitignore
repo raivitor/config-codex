@@ -1,10 +1,9 @@
 shell_snapshots/
-shell_snapshots
-/shell_snapshots
-shell_snapshots/*
-/shell_snapshots/
 log/
 sessions/
 tmp/
 history.jsonl
 auth.json
+session_index.jsonl
+*.sqlite-*
+*.sqlite
