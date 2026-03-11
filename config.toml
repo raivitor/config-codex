@@ -39,6 +39,9 @@ model_instructions_file = "~/.codex/prompts/reviewer.md"
 [projects."/home/raivitor/gitlab/shiva-remessas"]
 trust_level = "trusted"
 
+[projects."/home/raivitor/.codex"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = false
 writable_roots = ["."]

@@ -1,0 +1,3860 @@
+{
+  "schema_version": 1,
+  "tools": [
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_check_repo_initialized",
+      "tool": {
+        "name": "github_check_repo_initialized",
+        "title": "check_repo_initialized",
+        "description": "Check if a GitHub repository has been set up.",
+        "inputSchema": {
+          "properties": {
+            "repo_id": {
+              "title": "Repo Id",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repo_id"
+          ],
+          "title": "check_repo_initialized_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "check_repo_initialized_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "CheckRepoInitializedResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "initialized": {
+                  "title": "Initialized",
+                  "default": {},
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "initialized"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_check_repo_initialized",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/check_repo_initialized",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_compare_commits",
+      "tool": {
+        "name": "github_compare_commits",
+        "title": "compare_commits",
+        "description": "Compare two commits/refs and return per-file stats plus compare metadata.\n\nThis is a thin wrapper around `GithubPlugin.compare_commits` to provide a stable,\ncompact response shape to connector consumers.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "base": {
+              "title": "Base",
+              "type": "string"
+            },
+            "head": {
+              "title": "Head",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "base",
+            "head"
+          ],
+          "title": "compare_commits_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_compare_commits",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/compare_commits",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_download_user_content",
+      "tool": {
+        "name": "github_download_user_content",
+        "title": "download_user_content",
+        "description": "",
+        "inputSchema": {
+          "properties": {
+            "url": {
+              "title": "Url",
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "title": "download_user_content_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "download_user_content_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_download_user_content",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/download_user_content",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch",
+      "tool": {
+        "name": "github_fetch",
+        "title": "fetch",
+        "description": "Fetch a file from GitHub by URL.",
+        "inputSchema": {
+          "properties": {
+            "url": {
+              "title": "Url",
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "title": "fetch_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "content": {
+                  "title": "Content",
+                  "default": {},
+                  "type": "string"
+                },
+                "title": {
+                  "title": "Title",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "modified_date": {
+                  "title": "Modified Date",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "url": {
+                  "title": "Url",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "content"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_blob",
+      "tool": {
+        "name": "github_fetch_blob",
+        "title": "fetch_blob",
+        "description": "Fetch blob content by SHA from the given repository.",
+        "inputSchema": {
+          "properties": {
+            "repository_full_name": {
+              "title": "Repository Full Name",
+              "type": "string"
+            },
+            "blob_sha": {
+              "title": "Blob Sha",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repository_full_name",
+            "blob_sha"
+          ],
+          "title": "fetch_blob_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_blob_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_blob",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_blob",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_commit",
+      "tool": {
+        "name": "github_fetch_commit",
+        "title": "fetch_commit",
+        "description": "",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "commit_sha": {
+              "title": "Commit Sha",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "commit_sha"
+          ],
+          "title": "fetch_commit_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_commit_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchCommitResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "commit": {
+                  "title": "Commit",
+                  "default": {},
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "url": {
+                  "title": "Url",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "title": {
+                  "title": "Title",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "diff": {
+                  "title": "Diff",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "commit"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_commit",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_commit",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_file",
+      "tool": {
+        "name": "github_fetch_file",
+        "title": "fetch_file",
+        "description": "Fetch file content by path and ref from the given repository.",
+        "inputSchema": {
+          "properties": {
+            "repository_full_name": {
+              "title": "Repository Full Name",
+              "type": "string"
+            },
+            "path": {
+              "title": "Path",
+              "type": "string"
+            },
+            "ref": {
+              "title": "Ref",
+              "type": "string"
+            },
+            "encoding": {
+              "default": "utf-8",
+              "description": "One of utf-8 or base64. Default is utf-8.",
+              "enum": [
+                "utf-8",
+                "base64"
+              ],
+              "title": "Encoding",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repository_full_name",
+            "path",
+            "ref"
+          ],
+          "title": "fetch_file_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_file_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_file",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_file",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_issue",
+      "tool": {
+        "name": "github_fetch_issue",
+        "title": "fetch_issue",
+        "description": "Fetch GitHub issue.",
+        "inputSchema": {
+          "properties": {
+            "repo": {
+              "title": "Repo",
+              "type": "string"
+            },
+            "issue_number": {
+              "title": "Issue Number",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repo",
+            "issue_number"
+          ],
+          "title": "fetch_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchIssueResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "issue": {
+                  "title": "Issue",
+                  "default": {},
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "url": {
+                  "title": "Url",
+                  "default": {},
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "title": {
+                  "title": "Title",
+                  "default": {},
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "issue",
+                "url",
+                "title"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_issue",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_issue",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_issue_comments",
+      "tool": {
+        "name": "github_fetch_issue_comments",
+        "title": "fetch_issue_comments",
+        "description": "Fetch comments for a GitHub issue across all pages.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "issue_number": {
+              "title": "Issue Number",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "issue_number"
+          ],
+          "title": "fetch_issue_comments_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_issue_comments_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchPrCommentsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "comments": {
+                  "title": "Comments",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "url": {
+                  "title": "Url",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "title": {
+                  "title": "Title",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "comments"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_issue_comments",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_issue_comments",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_pr",
+      "tool": {
+        "name": "github_fetch_pr",
+        "title": "fetch_pr",
+        "description": "",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "pr_number"
+          ],
+          "title": "fetch_pr_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_pr_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchPullRequestResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "pull_request": {
+                  "title": "Pull Request",
+                  "default": {},
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "url": {
+                  "title": "Url",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "title": {
+                  "title": "Title",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "diff": {
+                  "title": "Diff",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "comments": {
+                  "title": "Comments",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "array",
+                      "items": {
+                        "default": {},
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "pull_request"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_pr",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_pr",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_pr_comments",
+      "tool": {
+        "name": "github_fetch_pr_comments",
+        "title": "fetch_pr_comments",
+        "description": "Fetch comments for a GitHub pull request.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "pr_number"
+          ],
+          "title": "fetch_pr_comments_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_pr_comments_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchPrCommentsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "comments": {
+                  "title": "Comments",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "url": {
+                  "title": "Url",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "title": {
+                  "title": "Title",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "comments"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_pr_comments",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_pr_comments",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_pr_file_patch",
+      "tool": {
+        "name": "github_fetch_pr_file_patch",
+        "title": "fetch_pr_file_patch",
+        "description": "Fetch a single-file patch from a PR, searching across all file-list pages.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            },
+            "path": {
+              "title": "Path",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "pr_number",
+            "path"
+          ],
+          "title": "fetch_pr_file_patch_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_pr_file_patch_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchPrFilePatchSingleResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "patch": {
+                  "default": {},
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "title": "GithubFilePatch",
+                      "default": {},
+                      "type": "object",
+                      "properties": {
+                        "filename": {
+                          "title": "Filename",
+                          "type": "anyOf",
+                          "anyOf": [
+                            {
+                              "default": {},
+                              "type": "string"
+                            },
+                            {
+                              "default": {},
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "patch": {
+                          "title": "Patch",
+                          "type": "anyOf",
+                          "anyOf": [
+                            {
+                              "default": {},
+                              "type": "string"
+                            },
+                            {
+                              "default": {},
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "patch"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_pr_file_patch",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_pr_file_patch",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_fetch_pr_patch",
+      "tool": {
+        "name": "github_fetch_pr_patch",
+        "title": "fetch_pr_patch",
+        "description": "Fetch the patch for a GitHub pull request across all changed-file pages.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "pr_number"
+          ],
+          "title": "fetch_pr_patch_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "fetch_pr_patch_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchPrPatchResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "patches": {
+                  "title": "Patches",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "GithubFilePatch",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "filename": {
+                        "title": "Filename",
+                        "type": "anyOf",
+                        "anyOf": [
+                          {
+                            "default": {},
+                            "type": "string"
+                          },
+                          {
+                            "default": {},
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "patch": {
+                        "title": "Patch",
+                        "type": "anyOf",
+                        "anyOf": [
+                          {
+                            "default": {},
+                            "type": "string"
+                          },
+                          {
+                            "default": {},
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "url": {
+                  "title": "Url",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "title": {
+                  "title": "Title",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "patches"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_fetch_pr_patch",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/fetch_pr_patch",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_commit_combined_status",
+      "tool": {
+        "name": "github_get_commit_combined_status",
+        "title": "get_commit_combined_status",
+        "description": "",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "commit_sha": {
+              "title": "Commit Sha",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "commit_sha"
+          ],
+          "title": "get_commit_combined_status_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_commit_combined_status_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "FetchCommitCombinedStatusResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "statuses": {
+                  "title": "Statuses",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "statuses"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_commit_combined_status",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_commit_combined_status",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_issue_comment_reactions",
+      "tool": {
+        "name": "github_get_issue_comment_reactions",
+        "title": "get_issue_comment_reactions",
+        "description": "Fetch reactions for an issue comment.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "comment_id": {
+              "title": "Comment Id",
+              "type": "integer"
+            },
+            "per_page": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Per Page"
+            },
+            "page": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Page"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "comment_id"
+          ],
+          "title": "get_issue_comment_reactions_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_issue_comment_reactions_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "GithubReactionsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "reactions": {
+                  "title": "Reactions",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "GithubReaction",
+                    "description": "Reaction on an issue or pull request.",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "default": {},
+                        "type": "integer"
+                      },
+                      "node_id": {
+                        "title": "Node Id",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "user": {
+                        "title": "GithubUser",
+                        "default": {},
+                        "type": "object",
+                        "properties": {
+                          "login": {
+                            "title": "Login",
+                            "default": {},
+                            "type": "string"
+                          },
+                          "name": {
+                            "title": "Name",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "email": {
+                            "title": "Email",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "avatar_url": {
+                            "title": "Avatar Url",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "id": {
+                            "title": "Id",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "integer"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "login"
+                        ]
+                      },
+                      "content": {
+                        "title": "Content",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "title": "Created At",
+                        "default": {},
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "node_id",
+                      "user",
+                      "content",
+                      "created_at"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "reactions"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_issue_comment_reactions",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_issue_comment_reactions",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_pr_diff",
+      "tool": {
+        "name": "github_get_pr_diff",
+        "title": "get_pr_diff",
+        "description": "",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            },
+            "format": {
+              "default": "diff",
+              "enum": [
+                "diff",
+                "patch"
+              ],
+              "title": "Format",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "pr_number"
+          ],
+          "title": "get_pr_diff_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_pr_diff_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "GetPrDiffResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "diff": {
+                  "title": "Diff",
+                  "default": {},
+                  "type": "string"
+                }
+              },
+              "required": [
+                "diff"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_pr_diff",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_pr_diff",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_pr_info",
+      "tool": {
+        "name": "github_get_pr_info",
+        "title": "get_pr_info",
+        "description": "Get metadata (title, description, refs, and status) for a pull request.\n\n        This action does *not* include the actual code changes. If you need the diff or\n        per-file patches, call `fetch_pr_patch` instead (or use\n        `get_users_recent_prs_in_repo` with ``include_diff=True`` when listing\n        the user's own PRs).",
+        "inputSchema": {
+          "properties": {
+            "repository_full_name": {
+              "title": "Repository Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repository_full_name",
+            "pr_number"
+          ],
+          "title": "get_pr_info_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_pr_info_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_pr_info",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_pr_info",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_pr_reactions",
+      "tool": {
+        "name": "github_get_pr_reactions",
+        "title": "get_pr_reactions",
+        "description": "Fetch reactions for a GitHub pull request.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            },
+            "per_page": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Per Page"
+            },
+            "page": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Page"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "pr_number"
+          ],
+          "title": "get_pr_reactions_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_pr_reactions_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "GithubReactionsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "reactions": {
+                  "title": "Reactions",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "GithubReaction",
+                    "description": "Reaction on an issue or pull request.",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "default": {},
+                        "type": "integer"
+                      },
+                      "node_id": {
+                        "title": "Node Id",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "user": {
+                        "title": "GithubUser",
+                        "default": {},
+                        "type": "object",
+                        "properties": {
+                          "login": {
+                            "title": "Login",
+                            "default": {},
+                            "type": "string"
+                          },
+                          "name": {
+                            "title": "Name",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "email": {
+                            "title": "Email",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "avatar_url": {
+                            "title": "Avatar Url",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "id": {
+                            "title": "Id",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "integer"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "login"
+                        ]
+                      },
+                      "content": {
+                        "title": "Content",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "title": "Created At",
+                        "default": {},
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "node_id",
+                      "user",
+                      "content",
+                      "created_at"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "reactions"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_pr_reactions",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_pr_reactions",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_pr_review_comment_reactions",
+      "tool": {
+        "name": "github_get_pr_review_comment_reactions",
+        "title": "get_pr_review_comment_reactions",
+        "description": "Fetch reactions for a pull request review comment.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "comment_id": {
+              "title": "Comment Id",
+              "type": "integer"
+            },
+            "per_page": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Per Page"
+            },
+            "page": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Page"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "comment_id"
+          ],
+          "title": "get_pr_review_comment_reactions_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_pr_review_comment_reactions_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "GithubReactionsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "reactions": {
+                  "title": "Reactions",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "GithubReaction",
+                    "description": "Reaction on an issue or pull request.",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "default": {},
+                        "type": "integer"
+                      },
+                      "node_id": {
+                        "title": "Node Id",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "user": {
+                        "title": "GithubUser",
+                        "default": {},
+                        "type": "object",
+                        "properties": {
+                          "login": {
+                            "title": "Login",
+                            "default": {},
+                            "type": "string"
+                          },
+                          "name": {
+                            "title": "Name",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "email": {
+                            "title": "Email",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "avatar_url": {
+                            "title": "Avatar Url",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "string"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "id": {
+                            "title": "Id",
+                            "type": "anyOf",
+                            "anyOf": [
+                              {
+                                "default": {},
+                                "type": "integer"
+                              },
+                              {
+                                "default": {},
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "login"
+                        ]
+                      },
+                      "content": {
+                        "title": "Content",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "title": "Created At",
+                        "default": {},
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "node_id",
+                      "user",
+                      "content",
+                      "created_at"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "reactions"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_pr_review_comment_reactions",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_pr_review_comment_reactions",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_profile",
+      "tool": {
+        "name": "github_get_profile",
+        "title": "get_profile",
+        "description": "Retrieve the GitHub profile for the authenticated user.",
+        "inputSchema": {
+          "properties": {},
+          "title": "get_profile_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_profile_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Profile",
+              "description": "Many connectors (especially OAuth-based) act on behalf of a user.\nThis class represents the user's profile, which is typically retrieved from\nthe connector's API during the OAuth flow.\n\nImplementation details for different connectors vary, so we can't guarantee\nthat all fields will be present.",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "name": {
+                  "title": "Name",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "email": {
+                  "title": "Email",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "nickname": {
+                  "title": "Nickname",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "picture": {
+                  "title": "Picture",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_profile",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_profile",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_repo",
+      "tool": {
+        "name": "github_get_repo",
+        "title": "get_repo",
+        "description": "Retrieve metadata for a GitHub repository.",
+        "inputSchema": {
+          "properties": {
+            "repo_id": {
+              "title": "Repo Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repo_id"
+          ],
+          "title": "get_repo_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_repo_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_repo",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_repo",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_repo_collaborator_permission",
+      "tool": {
+        "name": "github_get_repo_collaborator_permission",
+        "title": "get_repo_collaborator_permission",
+        "description": "",
+        "inputSchema": {
+          "properties": {
+            "repository_full_name": {
+              "title": "Repository Full Name",
+              "type": "string"
+            },
+            "username": {
+              "title": "Username",
+              "type": "string"
+            }
+          },
+          "required": [
+            "repository_full_name",
+            "username"
+          ],
+          "title": "get_repo_collaborator_permission_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_repo_collaborator_permission_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "RepoCollaboratorPermissionResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "permission": {
+                  "title": "Permission",
+                  "default": {},
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "permission"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_repo_collaborator_permission",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_repo_collaborator_permission",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_user_login",
+      "tool": {
+        "name": "github_get_user_login",
+        "title": "get_user_login",
+        "description": "Return the GitHub login for the authenticated user.",
+        "inputSchema": {
+          "properties": {},
+          "title": "get_user_login_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_user_login_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_user_login",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_user_login",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_get_users_recent_prs_in_repo",
+      "tool": {
+        "name": "github_get_users_recent_prs_in_repo",
+        "title": "get_users_recent_prs_in_repo",
+        "description": "List the user's recent GitHub pull requests in a repository.\n\n        `limit` is the final number of PRs returned. The connector paginates the\n        underlying GitHub search endpoint to satisfy larger limits.",
+        "inputSchema": {
+          "properties": {
+            "repository_full_name": {
+              "title": "Repository Full Name",
+              "type": "string"
+            },
+            "limit": {
+              "default": 20,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "state": {
+              "default": "all",
+              "title": "State",
+              "type": "string"
+            },
+            "include_diff": {
+              "default": false,
+              "title": "Include Diff",
+              "type": "boolean"
+            },
+            "include_comments": {
+              "default": false,
+              "title": "Include Comments",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "repository_full_name"
+          ],
+          "title": "get_users_recent_prs_in_repo_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_users_recent_prs_in_repo_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListPullRequestsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "pull_requests": {
+                  "title": "Pull Requests",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "pull_requests"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_get_users_recent_prs_in_repo",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/get_users_recent_prs_in_repo",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_installations",
+      "tool": {
+        "name": "github_list_installations",
+        "title": "list_installations",
+        "description": "List all organizations the authenticated user has installed this GitHub App on.",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_installations_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_installations_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListInstallationsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "installations": {
+                  "title": "Installations",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "installations"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_installations",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_installations",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_installed_accounts",
+      "tool": {
+        "name": "github_list_installed_accounts",
+        "title": "list_installed_accounts",
+        "description": "List all accounts that the user has installed our GitHub app on.",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_installed_accounts_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_installed_accounts_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListInstalledAccountsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "accounts": {
+                  "title": "Accounts",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "accounts"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_installed_accounts",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_installed_accounts",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_pr_changed_filenames",
+      "tool": {
+        "name": "github_list_pr_changed_filenames",
+        "title": "list_pr_changed_filenames",
+        "description": "List changed filenames for a PR across all paginated file-list pages.",
+        "inputSchema": {
+          "properties": {
+            "repo_full_name": {
+              "title": "Repo Full Name",
+              "type": "string"
+            },
+            "pr_number": {
+              "title": "Pr Number",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "repo_full_name",
+            "pr_number"
+          ],
+          "title": "list_pr_changed_filenames_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_pr_changed_filenames_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListPrChangedFilenamesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "filenames": {
+                  "title": "Filenames",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "filenames"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_pr_changed_filenames",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_pr_changed_filenames",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_recent_issues",
+      "tool": {
+        "name": "github_list_recent_issues",
+        "title": "list_recent_issues",
+        "description": "Return the most recent GitHub issues the user can access.\n\n        `top_k` is the final result limit. The connector transparently paginates\n        GitHub's issues API until that limit is reached or no more pages exist.",
+        "inputSchema": {
+          "properties": {
+            "top_k": {
+              "default": 20,
+              "title": "Top K",
+              "type": "integer"
+            }
+          },
+          "title": "list_recent_issues_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_recent_issues_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListIssuesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "issues": {
+                  "title": "Issues",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "issues"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_recent_issues",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_recent_issues",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_repositories",
+      "tool": {
+        "name": "github_list_repositories",
+        "title": "list_repositories",
+        "description": "List repositories accessible to the authenticated user.",
+        "inputSchema": {
+          "properties": {
+            "page_size": {
+              "default": 20,
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_offset": {
+              "default": 0,
+              "title": "Page Offset",
+              "type": "integer"
+            },
+            "include_search_index_status": {
+              "default": false,
+              "title": "Include Search Index Status",
+              "type": "boolean"
+            }
+          },
+          "title": "list_repositories_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_repositories_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListRepositoriesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "repositories": {
+                  "title": "Repositories",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "repositories"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_repositories",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_repositories",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_repositories_by_affiliation",
+      "tool": {
+        "name": "github_list_repositories_by_affiliation",
+        "title": "list_repositories_by_affiliation",
+        "description": "List repositories accessible to the authenticated user filtered by affiliation.",
+        "inputSchema": {
+          "properties": {
+            "affiliation": {
+              "title": "Affiliation",
+              "type": "string"
+            },
+            "page_size": {
+              "default": 100,
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_offset": {
+              "default": 0,
+              "title": "Page Offset",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "affiliation"
+          ],
+          "title": "list_repositories_by_affiliation_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_repositories_by_affiliation_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListRepositoriesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "repositories": {
+                  "title": "Repositories",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "repositories"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_repositories_by_affiliation",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_repositories_by_affiliation",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_repositories_by_installation",
+      "tool": {
+        "name": "github_list_repositories_by_installation",
+        "title": "list_repositories_by_installation",
+        "description": "List repositories accessible to the authenticated user.",
+        "inputSchema": {
+          "properties": {
+            "installation_id": {
+              "title": "Installation Id",
+              "type": "integer"
+            },
+            "page_size": {
+              "default": 20,
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_offset": {
+              "default": 0,
+              "title": "Page Offset",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "installation_id"
+          ],
+          "title": "list_repositories_by_installation_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_repositories_by_installation_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "ListRepositoriesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "repositories": {
+                  "title": "Repositories",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "repositories"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_repositories_by_installation",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_repositories_by_installation",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_user_org_memberships",
+      "tool": {
+        "name": "github_list_user_org_memberships",
+        "title": "list_user_org_memberships",
+        "description": "",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_user_org_memberships_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_user_org_memberships_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_user_org_memberships",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_user_org_memberships",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_list_user_orgs",
+      "tool": {
+        "name": "github_list_user_orgs",
+        "title": "list_user_orgs",
+        "description": "List organizations the authenticated user is a member of.",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_user_orgs_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "list_user_orgs_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_list_user_orgs",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/list_user_orgs",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search",
+      "tool": {
+        "name": "github_search",
+        "title": "search",
+        "description": "Search files within a specific GitHub repository.\n\n        Provide a plain string query, avoid GitHub query flags such as ``is:pr``.\n        Include keywords that match file names, functions, or error messages.\n        ``repository_name`` or ``org`` can narrow the search scope. Example:\n        ``query=\"tokenizer bug\" repository_name=\"tiktoken\"``.\n        ``topn`` is the number of results to return.\n        No results are returned if the query is empty.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "topn": {
+              "default": 20,
+              "title": "Topn",
+              "type": "integer"
+            },
+            "repository_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Repository Name"
+            },
+            "org": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Org"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "SearchResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "results": {
+                  "title": "Results",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "results"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search_branches",
+      "tool": {
+        "name": "github_search_branches",
+        "title": "search_branches",
+        "description": "Search GitHub branches within a repository.",
+        "inputSchema": {
+          "properties": {
+            "owner": {
+              "title": "Owner",
+              "type": "string"
+            },
+            "repo_name": {
+              "title": "Repo Name",
+              "type": "string"
+            },
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "page_size": {
+              "default": 20,
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Cursor"
+            }
+          },
+          "required": [
+            "owner",
+            "repo_name",
+            "query"
+          ],
+          "title": "search_branches_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_branches_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search_branches",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search_branches",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search_commits",
+      "tool": {
+        "name": "github_search_commits",
+        "title": "search_commits",
+        "description": "",
+        "inputSchema": {
+          "$defs": {
+            "GithubCommitSort": {
+              "enum": [
+                "best-match",
+                "author-date",
+                "committer-date"
+              ],
+              "title": "GithubCommitSort",
+              "type": "string"
+            },
+            "GithubSearchResultOrder": {
+              "enum": [
+                "desc",
+                "asc"
+              ],
+              "title": "GithubSearchResultOrder",
+              "type": "string"
+            }
+          },
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "repo": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Repo"
+            },
+            "org": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Org"
+            },
+            "topn": {
+              "default": 20,
+              "title": "Topn",
+              "type": "integer"
+            },
+            "sort": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/GithubCommitSort"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "order": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/GithubSearchResultOrder"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_commits_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_commits_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "SearchCommitsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "commits": {
+                  "title": "Commits",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "commits"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search_commits",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search_commits",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search_installed_repositories_streaming",
+      "tool": {
+        "name": "github_search_installed_repositories_streaming",
+        "title": "search_installed_repositories_streaming",
+        "description": "Search for a repository (not a file) by name or description. To search for a file, use `search`.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "limit": {
+              "default": 10,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "next_token": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Next Token"
+            },
+            "option_enrich_code_search_index_availability": {
+              "default": true,
+              "title": "Option Enrich Code Search Index Availability",
+              "type": "boolean"
+            },
+            "option_enrich_code_search_index_request_concurrency_limit": {
+              "default": 10,
+              "title": "Option Enrich Code Search Index Request Concurrency Limit",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_installed_repositories_streaming_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_installed_repositories_streaming_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Result",
+              "default": {},
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search_installed_repositories_streaming",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search_installed_repositories_streaming",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search_installed_repositories_v2",
+      "tool": {
+        "name": "github_search_installed_repositories_v2",
+        "title": "search_installed_repositories_v2",
+        "description": "Search repositories within the user's installations using GitHub search.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "limit": {
+              "default": 10,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "installation_ids": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Installation Ids"
+            },
+            "page": {
+              "default": 1,
+              "title": "Page",
+              "type": "integer"
+            },
+            "include_search_index_status": {
+              "default": false,
+              "title": "Include Search Index Status",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_installed_repositories_v2_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_installed_repositories_v2_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "SearchRepositoriesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "repositories": {
+                  "title": "Repositories",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "repositories"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search_installed_repositories_v2",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search_installed_repositories_v2",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search_issues",
+      "tool": {
+        "name": "github_search_issues",
+        "title": "search_issues",
+        "description": "Search GitHub issues.",
+        "inputSchema": {
+          "$defs": {
+            "GithubIssueSort": {
+              "enum": [
+                "best-match",
+                "created",
+                "updated",
+                "comments",
+                "reactions",
+                "interactions"
+              ],
+              "title": "GithubIssueSort",
+              "type": "string"
+            },
+            "GithubSearchResultOrder": {
+              "enum": [
+                "desc",
+                "asc"
+              ],
+              "title": "GithubSearchResultOrder",
+              "type": "string"
+            }
+          },
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "repo": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              ],
+              "title": "Repo"
+            },
+            "topn": {
+              "default": 20,
+              "title": "Topn",
+              "type": "integer"
+            },
+            "sort": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/GithubIssueSort"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "order": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/GithubSearchResultOrder"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "query",
+            "repo"
+          ],
+          "title": "search_issues_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_issues_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "SearchIssuesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "issues": {
+                  "title": "Issues",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "issues"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search_issues",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search_issues",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search_prs",
+      "tool": {
+        "name": "github_search_prs",
+        "title": "search_prs",
+        "description": "Search GitHub pull requests.",
+        "inputSchema": {
+          "$defs": {
+            "GithubIssueSort": {
+              "enum": [
+                "best-match",
+                "created",
+                "updated",
+                "comments",
+                "reactions",
+                "interactions"
+              ],
+              "title": "GithubIssueSort",
+              "type": "string"
+            },
+            "GithubSearchResultOrder": {
+              "enum": [
+                "desc",
+                "asc"
+              ],
+              "title": "GithubSearchResultOrder",
+              "type": "string"
+            }
+          },
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "repo": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Repo"
+            },
+            "org": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Org"
+            },
+            "topn": {
+              "default": 20,
+              "title": "Topn",
+              "type": "integer"
+            },
+            "sort": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/GithubIssueSort"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "order": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/GithubSearchResultOrder"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_prs_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_prs_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "SearchIssuesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "issues": {
+                  "title": "Issues",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "issues"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search_prs",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search_prs",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "tool_name": "github_search_repositories",
+      "tool": {
+        "name": "github_search_repositories",
+        "title": "search_repositories",
+        "description": "Search for a repository (not a file) by name or description. To search for a file, use `search`.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "per_page": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Per Page"
+            },
+            "page": {
+              "default": 1,
+              "title": "Page",
+              "type": "integer"
+            },
+            "org": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Org"
+            },
+            "topn": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Topn"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_repositories_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_repositories_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "SearchRepositoriesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "repositories": {
+                  "title": "Repositories",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "required": [
+                "repositories"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "GitHub_search_repositories",
+          "resource_uri": "/connector_76869538009648d5b282a4bb21c3d157/link_693afb3e7060819191e91c202408f06e/search_repositories",
+          "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+          "connector_name": "GitHub",
+          "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
+          "link_id": "link_693afb3e7060819191e91c202408f06e"
+        }
+      },
+      "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
+      "connector_name": "GitHub",
+      "plugin_display_names": []
+    }
+  ]
+}
