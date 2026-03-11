@@ -1,4 +1,4 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 model_reasoning_effort = "xhigh"
 
 # Segurança / padrão
@@ -7,6 +7,7 @@ sandbox_mode = "workspace-write"
 web_search = "cached"
 personality = "pragmatic"
 temperature = 0.0
+plan_mode_reasoning_effort = "xhigh"
 
 [profiles.pm]
 model = "gpt-5.3-codex"
@@ -50,6 +51,7 @@ trace_exporter = "none"
 
 [notice.model_migrations]
 "gpt-5.2" = "gpt-5.3-codex"
+"gpt-5.3-codex" = "gpt-5.4"
 
 [mcp_servers.pg]
 command = "npx"

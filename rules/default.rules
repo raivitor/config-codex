@@ -26,3 +26,5 @@ prefix_rule(pattern=["curl", "-sS", "-X", "PATCH", "-H", "Authorization: Bearer"
 prefix_rule(pattern=["curl", "-sS"], decision="allow")
 prefix_rule(pattern=["set", "-a"], decision="allow")
 prefix_rule(pattern=["set", "+a"], decision="allow")
+prefix_rule(pattern=["python3", "/home/raivitor/.codex/skills/.system/skill-installer/scripts/list-skills.py"], decision="allow")
+prefix_rule(pattern=["python3", "/home/raivitor/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py"], decision="allow")
