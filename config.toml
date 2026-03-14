@@ -1,5 +1,7 @@
 model = "gpt-5.4"
 model_reasoning_effort = "xhigh"
+model_context_window = 1000000
+model_auto_compact_token_limit = 900000
 
 # Segurança / padrão
 approval_policy = "on-request"
@@ -41,6 +43,9 @@ trust_level = "trusted"
 [projects."/home/raivitor/.codex"]
 trust_level = "trusted"
 
+[projects."/home/raivitor/projeto/boilerplate-2026"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = false
 writable_roots = ["."]
@@ -60,3 +65,6 @@ url = "https://developers.openai.com/mcp"
 
 [features]
 apps = true
+
+[tui]
+status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch", "context-used", "five-hour-limit", "context-window-size", "fast-mode"]
