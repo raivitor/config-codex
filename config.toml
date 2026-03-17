@@ -11,7 +11,6 @@ personality = "pragmatic"
 plan_mode_reasoning_effort = "xhigh"
 
 [profiles.pm]
-model = "gpt-5.4"
 sandbox_mode = "workspace-write"
 model_reasoning_effort = "xhigh"
 model_reasoning_summary = "concise"
@@ -24,15 +23,13 @@ model_reasoning_effort = "xhigh"
 model_instructions_file = "~/.codex/prompts/architect.md"
 
 [profiles.dev]
-model = "gpt-5.4"
 sandbox_mode = "workspace-write"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
 model_instructions_file = "~/.codex/prompts/dev.md"
 
 [profiles.qa]
-model = "gpt-5.4"
 sandbox_mode = "read-only"
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 model_reasoning_summary = "concise"
 model_verbosity = "low"
 model_instructions_file = "~/.codex/prompts/reviewer.md"
@@ -77,3 +74,4 @@ apps = true
 
 [tui]
 status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch", "context-used", "five-hour-limit", "context-window-size", "fast-mode"]
+theme = "catppuccin-macchiato"
