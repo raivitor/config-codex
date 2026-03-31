@@ -1,5 +1,5 @@
 model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "medium"
 model_context_window = 1000000
 model_auto_compact_token_limit = 900000
 
@@ -52,6 +52,15 @@ trust_level = "trusted"
 [projects."/home/raivitor/projeto/gerenciador-de-anuncios-de-aluguel"]
 trust_level = "trusted"
 
+[projects."/home/raivitor/gitlab/safra"]
+trust_level = "trusted"
+
+[projects."/home/raivitor/gitlab/safra/frontend-painel-adm"]
+trust_level = "trusted"
+
+[projects."/home/raivitor/gitlab/safra/backend-gateway"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = true
 writable_roots = ["."]
@@ -75,3 +84,9 @@ apps = true
 [tui]
 status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch", "context-used", "five-hour-limit", "context-window-size", "fast-mode"]
 theme = "catppuccin-macchiato"
+
+[notice]
+hide_rate_limit_model_nudge = true
+
+[plugins."github@openai-curated"]
+enabled = true

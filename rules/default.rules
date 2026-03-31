@@ -33,3 +33,6 @@ prefix_rule(pattern=["npm", "audit", "--prefix", "web", "--omit=dev"], decision=
 prefix_rule(pattern=["npm", "outdated", "--prefix", "api"], decision="allow")
 prefix_rule(pattern=["npm", "audit", "--prefix", "api", "--omit=dev"], decision="allow")
 prefix_rule(pattern=["npm", "install", "--prefix", "api"], decision="allow")
+prefix_rule(pattern=["npm", "outdated"], decision="allow")
+prefix_rule(pattern=["npm", "install"], decision="allow")
+prefix_rule(pattern=["npm", "exec", "--yes", "--", "knip"], decision="allow")
