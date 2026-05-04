@@ -1,14 +1,14 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "medium"
-model_context_window = 1000000
-model_auto_compact_token_limit = 900000
+model_context_window = 900000
+model_auto_compact_token_limit = 800000
 
 # Segurança / padrão
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 personality = "pragmatic"
-plan_mode_reasoning_effort = "xhigh"
+plan_mode_reasoning_effort = "medium"
 
 [profiles.pm]
 sandbox_mode = "workspace-write"
@@ -61,6 +61,15 @@ trust_level = "trusted"
 [projects."/home/raivitor/gitlab/safra/backend-gateway"]
 trust_level = "trusted"
 
+[projects."/home/raivitor/projeto/english-study"]
+trust_level = "trusted"
+
+[projects."/home/raivitor/gitlab/siga"]
+trust_level = "trusted"
+
+[projects."/home/raivitor/projeto/cms-rua-larga"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = true
 writable_roots = ["."]
@@ -75,8 +84,17 @@ trace_exporter = "none"
 command = "npx"
 args = ["-y", "@modelcontextprotocol/server-postgres", "postgresql://admin:adminadmin@localhost:5432/shiva5"]
 
+[mcp_servers.pg.tools.query]
+approval_mode = "approve"
+
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
+
+[mcp_servers.openaiDeveloperDocs.tools.search_openai_docs]
+approval_mode = "approve"
+
+[mcp_servers.openaiDeveloperDocs.tools.fetch_openai_doc]
+approval_mode = "approve"
 
 [features]
 apps = true
@@ -85,8 +103,15 @@ apps = true
 status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch", "context-used", "five-hour-limit", "context-window-size", "fast-mode"]
 theme = "catppuccin-macchiato"
 
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
 [notice]
 hide_rate_limit_model_nudge = true
+fast_default_opt_out = true
 
 [plugins."github@openai-curated"]
+enabled = true
+
+[plugins."vercel-plugin@plugins-cli"]
 enabled = true
