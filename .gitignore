@@ -7,3 +7,11 @@ auth.json
 session_index.jsonl
 *.sqlite-*
 *.sqlite
+.tmp
+cache/
+docker-config/
+jest-cache-api/
+jest-cache-web/
+plugins/
+ts6-check/
+skills/

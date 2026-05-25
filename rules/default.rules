@@ -44,3 +44,5 @@ prefix_rule(pattern=["bash", "/home/raivitor/.codex/skills/playwright/scripts/pl
 prefix_rule(pattern=["npx", "playwright", "install"], decision="allow")
 prefix_rule(pattern=["npx", "playwright", "screenshot"], decision="allow")
 prefix_rule(pattern=["rm", "-rf", "output"], decision="allow")
+prefix_rule(pattern=["mkdir", "-p", "/tmp/tsx-1000"], decision="allow")
+prefix_rule(pattern=["rm", "-rf", "api/.jest-cache"], decision="allow")

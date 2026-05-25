@@ -6,9 +6,10 @@ model_auto_compact_token_limit = 800000
 # Segurança / padrão
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
-web_search = "cached"
+web_search = "live"
 personality = "pragmatic"
 plan_mode_reasoning_effort = "medium"
+approvals_reviewer = "guardian_subagent"
 
 [profiles.pm]
 sandbox_mode = "workspace-write"
@@ -70,6 +71,12 @@ trust_level = "trusted"
 [projects."/home/raivitor/projeto/cms-rua-larga"]
 trust_level = "trusted"
 
+[projects."/home/raivitor/projeto/ai-translate"]
+trust_level = "trusted"
+
+[projects."/home/raivitor/projeto/estudo-anki"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = true
 writable_roots = ["."]
@@ -79,13 +86,6 @@ exclude_tmpdir_env_var = true
 [otel]
 exporter = "none"
 trace_exporter = "none"
-
-[mcp_servers.pg]
-command = "npx"
-args = ["-y", "@modelcontextprotocol/server-postgres", "postgresql://admin:adminadmin@localhost:5432/shiva5"]
-
-[mcp_servers.pg.tools.query]
-approval_mode = "approve"
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
@@ -98,6 +98,7 @@ approval_mode = "approve"
 
 [features]
 apps = true
+terminal_resize_reflow = true
 
 [tui]
 status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch", "context-used", "five-hour-limit", "context-window-size", "fast-mode"]
@@ -113,5 +114,4 @@ fast_default_opt_out = true
 [plugins."github@openai-curated"]
 enabled = true
 
-[plugins."vercel-plugin@plugins-cli"]
-enabled = true
+[hooks.state]
