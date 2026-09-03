@@ -15,3 +15,6 @@ jest-cache-web/
 plugins/
 ts6-check/
 skills/
+npm-cache/
+thread-writer-locks/
+mcp-oauth-locks/

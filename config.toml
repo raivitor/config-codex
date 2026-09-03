@@ -1,7 +1,5 @@
 model = "gpt-5.6-sol"
 model_reasoning_effort = "medium"
-model_context_window = 900000
-model_auto_compact_token_limit = 800000
 notify = [
   "pwsh.exe",
   "-NoProfile",
@@ -15,31 +13,7 @@ sandbox_mode = "workspace-write"
 web_search = "live"
 personality = "pragmatic"
 plan_mode_reasoning_effort = "high"
-approvals_reviewer = "guardian_subagent"
-
-[profiles.pm]
-sandbox_mode = "workspace-write"
-model_reasoning_effort = "xhigh"
-model_reasoning_summary = "concise"
-model_instructions_file = "~/.codex/prompts/pm.md"
-
-[profiles.arq]
-model = "gpt-5.4"
-sandbox_mode = "workspace-write"
-model_reasoning_effort = "xhigh"
-model_instructions_file = "~/.codex/prompts/architect.md"
-
-[profiles.dev]
-sandbox_mode = "workspace-write"
-model_reasoning_effort = "xhigh"
-model_instructions_file = "~/.codex/prompts/dev.md"
-
-[profiles.qa]
-sandbox_mode = "read-only"
-model_reasoning_effort = "xhigh"
-model_reasoning_summary = "concise"
-model_verbosity = "low"
-model_instructions_file = "~/.codex/prompts/reviewer.md"
+approvals_reviewer = "auto_review"
 
 [projects."/home/raivitor/gitlab/shiva-remessas"]
 trust_level = "trusted"
@@ -94,13 +68,13 @@ trust_level = "trusted"
 
 [sandbox_workspace_write]
 network_access = true
-writable_roots = ["."]
 exclude_slash_tmp = true
 exclude_tmpdir_env_var = true
 
 [otel]
 exporter = "none"
 trace_exporter = "none"
+metrics_exporter = "none"
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
@@ -111,9 +85,6 @@ approval_mode = "approve"
 [mcp_servers.openaiDeveloperDocs.tools.fetch_openai_doc]
 approval_mode = "approve"
 
-[features]
-apps = true
-terminal_resize_reflow = true
 
 [tui]
 notifications = ["agent-turn-complete"]
