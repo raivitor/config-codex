@@ -1,14 +1,20 @@
-model = "gpt-5.5"
+model = "gpt-5.6-sol"
 model_reasoning_effort = "medium"
 model_context_window = 900000
 model_auto_compact_token_limit = 800000
+notify = [
+  "pwsh.exe",
+  "-NoProfile",
+  "-Command",
+  "Import-Module BurntToast; New-BurntToastNotification -Text 'Codex', 'Processamento encerrado'"
+]
 
 # Segurança / padrão
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = "live"
 personality = "pragmatic"
-plan_mode_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "high"
 approvals_reviewer = "guardian_subagent"
 
 [profiles.pm]
@@ -77,6 +83,15 @@ trust_level = "trusted"
 [projects."/home/raivitor/projeto/estudo-anki"]
 trust_level = "trusted"
 
+[projects."/home/raivitor/projeto/ia-chat-teacher"]
+trust_level = "trusted"
+
+[projects."/home/raivitor/gitlab/siga/api"]
+trust_level = "trusted"
+
+[projects."/home/raivitor/projeto/mega-sena"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = true
 writable_roots = ["."]
@@ -101,11 +116,15 @@ apps = true
 terminal_resize_reflow = true
 
 [tui]
+notifications = ["agent-turn-complete"]
+notification_method = "auto"
+notification_condition = "always"
 status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch", "context-used", "five-hour-limit", "context-window-size", "fast-mode"]
 theme = "catppuccin-macchiato"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
+"gpt-5.6-sol" = 4
 
 [notice]
 hide_rate_limit_model_nudge = true
@@ -114,4 +133,22 @@ fast_default_opt_out = true
 [plugins."github@openai-curated"]
 enabled = true
 
+[plugins."codex-cli-wakatime@wakatime"]
+enabled = true
+
 [hooks.state]
+
+[hooks.state."codex-cli-wakatime@wakatime:hooks/hooks.json:post_tool_use:0:0"]
+trusted_hash = "sha256:3019b5f39b02025bd4c40a156aef99bda28389107c16b8fa6ed6bc691a3928e4"
+
+[hooks.state."codex-cli-wakatime@wakatime:hooks/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:3793f33bb324020d43751b6ce8548d7a1a2791fec8b4c76fc1dcc689f6671b7b"
+
+[hooks.state."codex-cli-wakatime@wakatime:hooks/hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:84094d8aa7937a8545ef4d87ef03a0309f77bd2670fbc74560c922f3fe653dcc"
+
+[marketplaces.wakatime]
+last_updated = "2026-06-16T16:33:48Z"
+last_revision = "a0218436d549915c521287b9436782891e75e856"
+source_type = "git"
+source = "https://github.com/wakatime/codex-cli-wakatime.git"
